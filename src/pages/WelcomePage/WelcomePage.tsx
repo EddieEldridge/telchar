@@ -8,7 +8,7 @@ const WelcomePage: React.FC = () => {
     <Flex justifyContent="center" flexDirection="column" h="100%">
       <Box as="section" whiteSpace="nowrap" textAlign="center">
         <Heading size="2xl">Welcome to</Heading>
-        <Heading size="lg" color="orange.300">Tauri Meteor Template</Heading>
+        <Heading size="lg" color="orange.300">Telchar</Heading>
       </Box>
 
       <Box display="flex" flexDirection="column" gap={6}>

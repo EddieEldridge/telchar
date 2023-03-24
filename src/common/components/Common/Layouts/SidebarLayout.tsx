@@ -22,7 +22,7 @@ const SidebarLayout = (props: Props) => {
 
   return (
     <Sidebar>
-      <AppVersion />
+      {/* <AppVersion /> */}
       <Box
         flexDirection="column"
         display="flex"

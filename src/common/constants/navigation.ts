@@ -10,6 +10,6 @@ interface LinkItemProps {
 
 export const SidebarLinkItems: Array<LinkItemProps> = [
   { name: 'Welcome', to: '/', icon: FiHome },
-  { name: 'Tauri', to: '/tauri', icon: FiCompass },
-  { name: 'Zustand', to: "/zustand", icon: GiMatterStates },
+  { name: 'Craft', to: '/tauri', icon: FiCompass },
+  { name: 'About', to: "/zustand", icon: GiMatterStates },
 ];

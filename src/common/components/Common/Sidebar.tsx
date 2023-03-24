@@ -77,7 +77,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       <Flex h="20" alignItems="center" mx="8" gap={2}>
         <Image src="./src/assets/images/meteor.png" width="32px" />
         <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold" textAlign="center" pt={2}>
-          Meteor
+          Telchar
         </Text>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>

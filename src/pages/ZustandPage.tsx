@@ -13,15 +13,15 @@ const ZustandPage = () => {
 
   return (
     <>
-    <Image src="./src/assets/images/technologies/zustand.png" width="200px"/>
+    <Image src="https://tolkiengateway.net/w/images/c/c8/Donato_Giancola_-_Telchar_forging_Narsil.jpg" width="200px"/>
     <VStack>
-      <Text>Asteroids: {asteroids}</Text>
+      <Text>Dragon-helms: {asteroids}</Text>
 
       <HStack>
-        <Button onClick={() => increaseAsteroids()}>Add asteroid</Button>
-        <Button onClick={() => decreaseAsteroids()}>Remove asteroid</Button>
+        <Button onClick={() => increaseAsteroids()}>Add Dragon-helm</Button>
+        <Button onClick={() => decreaseAsteroids()}>Remove Dragon-helm</Button>
       </HStack>
-      <Button onClick={() => removeAllAsteroids()}>Remove all Asteroids</Button>
+      <Button onClick={() => removeAllAsteroids()}>Remove all Dragon-helm</Button>
     </VStack>
     </>
   )
