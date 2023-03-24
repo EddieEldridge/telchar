@@ -4,7 +4,7 @@ import { invoke } from '@tauri-apps/api/tauri'
 import { IoLogInOutline } from 'react-icons/io5'
 import { BsWindow } from 'react-icons/bs';
 import { appWindow } from "@tauri-apps/api/window";
-import { BoxAction, BoxFieldset, ButtonWithIcon } from '@/pages/TauriPage/components';
+import { BoxAction, BoxFieldset, ButtonWithIcon } from '@/pages/CreatePage/components';
 
 import {
   VscChromeClose,
@@ -17,7 +17,7 @@ interface CustomResponse {
   message: string
 }
 
-const ZustandPage: React.FC = () => {
+const CraftPage: React.FC = () => {
 
   const [rustMsg, setRustMessage] = useState<string>('N/A')
   const [isMaxsize, setIsMaxsize] = useState<boolean>(false);
@@ -89,4 +89,4 @@ return (
 )
 }
 
-export default ZustandPage;
+export default CraftPage;

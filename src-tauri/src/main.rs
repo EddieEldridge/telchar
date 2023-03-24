@@ -4,6 +4,7 @@
   windows_subsystem = "windows"
 )]
 
+use tauri::api::dialog;
 use tauri::{Manager}; // used by .get_window
 use tauri::{self, SystemTrayEvent, SystemTrayMenuItem};
 use tauri::{CustomMenuItem, SystemTray, SystemTrayMenu};
@@ -32,6 +33,14 @@ fn get_epoch_ms() -> u128 {
 #[tauri::command]
 async fn message_from_rust(window: tauri::Window) -> Result<CustomResponse, String> {
   println!("Called from {}", window.label());
+
+  dialog::FileDialogBuilder::default()
+  .add_filter("PDF", &["pdf"])
+  .pick_file(|path_buf| match path_buf {
+    Some(p) => {}
+    _ => {}
+  });
+
   Ok(CustomResponse {
     message: format!("Hello from rust!\nTime: {}", get_epoch_ms())
   })
