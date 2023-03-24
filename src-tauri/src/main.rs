@@ -31,7 +31,7 @@ fn get_epoch_ms() -> u128 {
 }
 
 #[tauri::command]
-async fn message_from_rust(window: tauri::Window) -> Result<CustomResponse, String> {
+async fn get_file_checksum(window: tauri::Window) -> Result<CustomResponse, String> {
   println!("Called from {}", window.label());
 
   dialog::FileDialogBuilder::default()
@@ -42,7 +42,7 @@ async fn message_from_rust(window: tauri::Window) -> Result<CustomResponse, Stri
   });
 
   Ok(CustomResponse {
-    message: format!("Hello from rust!\nTime: {}", get_epoch_ms())
+    message: format!("Checksum: {}", get_epoch_ms())
   })
 }
 
@@ -103,7 +103,7 @@ fn main() {
       },
       _ => {}
     })
-    .invoke_handler(tauri::generate_handler![message_from_rust])
+    .invoke_handler(tauri::generate_handler![get_file_checksum])
     .plugin(tauri_plugin_single_instance::init(|app, argv, cwd| {
       app
         .emit_all(

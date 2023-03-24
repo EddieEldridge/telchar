@@ -1,42 +1,21 @@
-import { Text, Button, Box, SimpleGrid } from '@chakra-ui/react'
-import React, { useEffect, useState } from 'react'
-import { invoke } from '@tauri-apps/api/tauri'
-import { IoLogInOutline } from 'react-icons/io5'
-import { BsWindow } from 'react-icons/bs';
-import { appWindow } from "@tauri-apps/api/window";
-import { BoxAction, BoxFieldset, ButtonWithIcon } from '@/pages/CreatePage/components';
-
-import {
-  VscChromeClose,
-  VscChromeMinimize,
-  VscChromeMaximize,
-  VscChromeRestore,
-} from "react-icons/vsc";
+import { BoxAction, BoxFieldset } from '@/pages/CreatePage/components';
+import { Button, SimpleGrid, Text } from '@chakra-ui/react';
+import { invoke } from '@tauri-apps/api/tauri';
+import React, { useState } from 'react';
+import { IoLogInOutline } from 'react-icons/io5';
 
 interface CustomResponse {
   message: string
 }
 
 const CraftPage: React.FC = () => {
-
   const [rustMsg, setRustMessage] = useState<string>('N/A')
-  const [isMaxsize, setIsMaxsize] = useState<boolean>(false);
-
-  useEffect(() => {
-    appWindow.isMaximized().then(setIsMaxsize);
-  }, []);
 
   const callTauriBackend = async () => {
-    const res: CustomResponse = await invoke('message_from_rust');
+    const res: CustomResponse = await invoke('get_file_checksum');
     if (res !== undefined) {
       setRustMessage(res.message)
     }
-  }
-
-  const handleMaximization = async () => {
-    await appWindow.toggleMaximize()
-    const isMaximized = await appWindow.isMaximized();
-    setIsMaxsize(isMaximized);
   }
 
 return (
@@ -51,37 +30,6 @@ return (
         {rustMsg && (
           <h2>{rustMsg}</h2>
         )}
-      </BoxFieldset>
-
-    </BoxAction>
-
-    <BoxAction title="Window Actions" icon={BsWindow}>
-      <Text>Hello World from Tauri Typescript React!</Text>
-
-      <BoxFieldset label="Action" display="flex" gap={2} >
-        <ButtonWithIcon
-          label="Close" icon={VscChromeClose}
-          onClick={() => appWindow.close()} />
-        <ButtonWithIcon
-          label={isMaxsize ? "Restore" : "Maximize"}
-          icon={isMaxsize ? VscChromeRestore : VscChromeMaximize}
-          onClick={handleMaximization}
-        />
-        <ButtonWithIcon
-          label="Minimize" icon={VscChromeMinimize}
-          onClick={() => appWindow.minimize()}
-        />
-      </BoxFieldset>
-      <BoxFieldset label="Extras" display="flex" gap={2}>
-        <Box
-          width="80px" height="50px"
-          backgroundColor="primary.500"
-          display="flex"
-          borderRadius="base"
-          data-tauri-drag-region
-        >
-          <Text fontSize="12px" textAlign="center" m="auto" data-tauri-drag-region>Drag here</Text>
-        </Box>
       </BoxFieldset>
 
     </BoxAction>
