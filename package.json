@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.17",
-    "@chakra-ui/react": "^2.5.3",
+    "@chakra-ui/react": "^2.5.5",
     "@emotion/react": "11.10.6",
     "@emotion/styled": "11.10.6",
     "@fontsource/montserrat": "^4.5.14",
@@ -42,10 +42,11 @@
     "mutative": "^0.4.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.43.9",
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.9.0",
     "tauri-plugin-store-api": "github:tauri-apps/tauri-plugin-store",
-    "typescript": "^5.0.2",
+    "typescript": "^5.0.3",
     "zustand": "^4.3.6"
   },
   "devDependencies": {

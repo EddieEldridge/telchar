@@ -1,8 +1,7 @@
-import { BoxAction, BoxFieldset } from '@/pages/CreatePage/components';
 import { Button, SimpleGrid, Text } from '@chakra-ui/react';
 import { invoke } from '@tauri-apps/api/tauri';
 import React, { useState } from 'react';
-import { IoLogInOutline } from 'react-icons/io5';
+import { useForm } from 'react-hook-form';
 
 interface CustomResponse {
   message: string
@@ -11,28 +10,23 @@ interface CustomResponse {
 const CraftPage: React.FC = () => {
   const [rustMsg, setRustMessage] = useState<string>('N/A')
 
+  const {
+    formState: { errors, isSubmitting },
+  } = useForm()
+
   const callTauriBackend = async () => {
-    const res: CustomResponse = await invoke('get_file_checksum');
+    const res: CustomResponse = await invoke('list_heroic_cultures');
     if (res !== undefined) {
       setRustMessage(res.message)
+      console.info(rustMsg)
     }
   }
 
 return (
   <SimpleGrid columns={2} spacing={5}>
-    <BoxAction title="Message to backend" icon={IoLogInOutline}>
-      <Text>Hello World from Tauri Typescript React!</Text>
-
-      <BoxFieldset label="Action">
-        <Button onClick={callTauriBackend} width="100%">Get message from rust backend</Button>
-      </BoxFieldset>
-      <BoxFieldset label="Response">
-        {rustMsg && (
-          <h2>{rustMsg}</h2>
-        )}
-      </BoxFieldset>
-
-    </BoxAction>
+      <Button onClick={callTauriBackend} mt={4} colorScheme='teal' isLoading={isSubmitting} type='submit'>
+        Start Crafting
+      </Button>
   </SimpleGrid>
 )
 }

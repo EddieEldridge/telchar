@@ -32,7 +32,7 @@ export default defineConfig({
       usePolling: true,
     },
   },
-  clearScreen: false,
+  clearScreen: true,
   resolve: {
     alias: [{ find: '@', replacement: '/src' }],
     process: "process/browser",

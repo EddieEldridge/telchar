@@ -46,6 +46,17 @@ async fn get_file_checksum(window: tauri::Window) -> Result<CustomResponse, Stri
   })
 }
 
+#[tauri::command]
+async fn list_heroic_cultures(window: tauri::Window) -> Result<CustomResponse, String> {
+  println!("Called from {}", window.label());
+  let culture =  String::from("Bardings");
+
+  println!("Returning response: {culture}");
+  Ok(CustomResponse {
+    message: culture
+  })
+}
+
 fn main() {
   let quit = CustomMenuItem::new("quit".to_string(), "Quit");
   let hide = CustomMenuItem::new("hide".to_string(), "Hide");
@@ -103,7 +114,10 @@ fn main() {
       },
       _ => {}
     })
-    .invoke_handler(tauri::generate_handler![get_file_checksum])
+    .invoke_handler(tauri::generate_handler![
+      get_file_checksum,
+      list_heroic_cultures
+    ])
     .plugin(tauri_plugin_single_instance::init(|app, argv, cwd| {
       app
         .emit_all(

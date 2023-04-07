@@ -81,7 +81,7 @@ const Theme = extendTheme({
   config: {
     initialColorMode: "dark",
     useSystemColorMode: false,
-    cssVarPrefix: "tauriboilerplate",
+    cssVarPrefix: "telchar",
   },
 });
 
