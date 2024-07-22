@@ -1,0 +1,99 @@
+import { Button, CollapseProps, Image } from "antd";
+import { NavLink } from "react-router-dom";
+import { Culture } from "../interfaces/Culture";
+import { BARDING } from "../data/Cultures/Barding";
+import { LAKEMAN } from "../data/Cultures/Lakeman";
+import { randomElement, toCommaSeparatedString, upper } from "../utils/Utils";
+
+// Populate an array with all the current cultures
+// Loop through the cultures
+// Generate some HTML from their data defined in their interfaces
+
+const CULTURES: Culture[] = [];
+CULTURES.push(BARDING);
+CULTURES.push(LAKEMAN);
+
+const CULTURE_DROPDOWNS: CollapseProps["items"] = [];
+
+CULTURES.forEach((c) => {
+  CULTURE_DROPDOWNS.push({
+    key: c.name,
+    label: c.name,
+    children: (
+      <div>
+        {/* Name */}
+        <h1>{c.name}</h1>
+        {/* Image */}
+        <Image src={c.imageUrl} />
+        <br />
+        {/* Description */}
+        <h2>Description</h2>
+        <i>{c.description}</i>
+        {/* Typical Names */}
+        <h2>Typical Names</h2>
+        <h3>Female</h3>
+        <p>
+          {randomElement(c.typicalNames.female)}, {randomElement(c.typicalNames.female)}, {randomElement(c.typicalNames.female)}, {randomElement(c.typicalNames.female)},{" "}
+          {randomElement(c.typicalNames.female)}
+        </p>
+        <h3>Male</h3>
+        <p>
+          {randomElement(c.typicalNames.male)}, {randomElement(c.typicalNames.male)}, {randomElement(c.typicalNames.male)}, {randomElement(c.typicalNames.male)}, {randomElement(c.typicalNames.male)}
+        </p>
+        {/* Cultural Traits */}
+        <h2>Cultural Traits</h2>
+        <table className="center">
+          <tr>
+            {/* Ability Score Increase */}
+            <th>Ability Score Increase</th>
+            <td>
+              {" "}
+              {Object.entries(c.culturalTraits.abilityScoreIncrease).map(([key, value]) => (
+                <p className="inline">
+                  {upper(key)}: +{value} {""}
+                  <br />
+                </p>
+              ))}
+            </td>
+          </tr>
+          {/* Adventuring Age */}
+          <tr>
+            <th>Adventuring Age</th>
+            <td>
+              {" "}
+              {c.culturalTraits.adventuringAge.min} to {c.culturalTraits.adventuringAge.max} years
+            </td>
+          </tr>
+          {/* Height Range */}
+          <tr>
+            <th>Height Range</th>
+            <td>
+              {c.culturalTraits.heightRange.min} to {c.culturalTraits.heightRange.max} ft.
+            </td>
+          </tr>
+          {/* Speed */}
+          <tr>
+            <th>Speed</th>
+            <td>{c.culturalTraits.speed} ft.</td>
+          </tr>
+          {/* Languages */}
+          <tr>
+            <th>Languages</th>
+            <td>{toCommaSeparatedString(c.culturalTraits.languages)}</td>
+          </tr>
+          {/* Standard of Living */}
+          <tr>
+            <th>Standard of Living</th>
+            <td>{c.culturalTraits.standardOfLiving}</td>
+          </tr>
+        </table>
+        {/* Proceed Button */}
+        <NavLink to="/calling">
+          <Button>Proceed</Button>
+        </NavLink>
+      </div>
+    ),
+  });
+});
+
+export default CULTURE_DROPDOWNS;

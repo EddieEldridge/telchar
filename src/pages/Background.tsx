@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import "../css/App.css";
 
-function App() {
+function Background() {
   return (
     <>
       <h1>Select your Background</h1>
@@ -12,4 +12,4 @@ function App() {
   );
 }
 
-export default App;
+export default Background;

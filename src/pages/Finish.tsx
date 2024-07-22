@@ -1,6 +1,6 @@
 import "../css/App.css";
 
-function App() {
+function Finish() {
   return (
     <>
       <h1>Your name is Gandalf!</h1>
@@ -9,4 +9,4 @@ function App() {
   );
 }
 
-export default App;
+export default Finish;

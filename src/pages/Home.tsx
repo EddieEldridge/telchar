@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import lotrLogo from "../assets/images/logo.png";
 import "../css/App.css";
 
-function App() {
+function Home() {
   return (
     <>
       <div>
@@ -22,4 +22,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
