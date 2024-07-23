@@ -1,4 +1,5 @@
 import { Background } from "./Background";
+import { StandardOfLiving, ToolProficiency, Ability, SkillEnum } from "./Generic";
 
 export type Culture = {
     name: string;
@@ -9,17 +10,17 @@ export type Culture = {
         male: string[];
     };
     culturalTraits: {
-        abilityScoreIncrease: { strength?: number; charisma?: number, constitution?: number, wisdom?: number, intelligence?: number, dexterity?: number };
+        abilityScoreIncrease: Ability[];
         adventuringAge: { min: number; max: number };
         size: string;
         heightRange: { min: number; max: number };
         speed: number;
         weaponProficiencies?: string[];
-        toolProficiencies?: string[];
-        skillProficiencies?: string[];
+        toolProficiencies?: ToolProficiency[];
+        skillProficiencies?: SkillEnum[];
         miscProficiencies?: string[];
         languages: string[];
-        standardOfLiving: string;
+        standardOfLiving: StandardOfLiving;
         subculture?: string[]
     };
     backgrounds: Background[];

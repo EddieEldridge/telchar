@@ -1,10 +1,10 @@
 import { Button, CollapseProps, Image } from "antd";
 import { NavLink } from "react-router-dom";
-import { Culture } from "../interfaces/Culture";
-import { BARDING } from "../data/Cultures/Barding";
-import { randomElement, toCommaSeparatedString, upper } from "../utils/Utils";
-import { ELF } from "../data/Cultures/Elf";
-import { DWARF } from "../data/Cultures/Dwarf";
+import { Culture } from "../Types/Culture";
+import { BARDING } from "../Data/Cultures/Barding";
+import { randomElement, toCommaSeparatedString, upper } from "../Utils/Utils";
+import { ELF } from "../Data/Cultures/Elf";
+import { DWARF } from "../Data/Cultures/Dwarf";
 
 const CULTURES: Culture[] = [];
 CULTURES.push(BARDING);
@@ -46,11 +46,9 @@ CULTURES.forEach((c) => {
             {/* Ability Score Increase */}
             <th>Ability Score Increase</th>
             <td>
-              {" "}
-              {Object.entries(c.culturalTraits.abilityScoreIncrease).map(([key, value]) => (
-                <p className="inline">
-                  {upper(key)}: +{value} {""}
-                  <br />
+              {c.culturalTraits.abilityScoreIncrease.map((a) => (
+                <p>
+                  {upper(a.name)} +{a.value}
                 </p>
               ))}
             </td>

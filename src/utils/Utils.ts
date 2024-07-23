@@ -7,6 +7,6 @@ export function upper(string: string) {
 }
 
 export function toCommaSeparatedString(languages: string[] | undefined): string {
-    if (!languages) return "";
+    if (!languages) return "ERROR";
     return languages.join(", ");
 }

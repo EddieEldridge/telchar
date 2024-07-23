@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import "../css/App.css";
+import "../Assets/css/App.css";
 
 function Statistics() {
   return (

@@ -1,15 +1,12 @@
 import { NavLink } from "react-router-dom";
-import lotrLogo from "../assets/images/logo.png";
-import "../css/App.css";
+import lotrLogo from "../Assets/images/logo.png";
+import "../Assets/css/App.css";
 
 function Home() {
   return (
     <>
       <div>
-        <a
-          href="https://freeleaguepublishing.com/games/the-lord-of-the-rings-roleplaying/"
-          target="_blank"
-        >
+        <a href="https://freeleaguepublishing.com/games/the-lord-of-the-rings-roleplaying/" target="_blank">
           <img src={lotrLogo} className="logo" alt="Vite logo" />
         </a>
       </div>

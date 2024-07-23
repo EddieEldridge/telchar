@@ -1,7 +1,9 @@
+import { SkillEnum } from "./Generic";
+
 export type Background = {
     name: string;
     description: string;
-    skillProficiencies: string[];
+    skillProficiencies: SkillEnum[];
     toolProficiency: string;
     distinctiveFeatures: string[];
 };

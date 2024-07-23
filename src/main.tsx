@@ -1,14 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./css/General.css";
+import "./Assets/css/General.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home.tsx";
-import Culture from "./pages/Culture.tsx";
-import Background from "./pages/Background.tsx";
-import Name from "./pages/Name.tsx";
-import Statistics from "./pages/Statistics.tsx";
-import Calling from "./pages/Calling.tsx";
-import Finish from "./pages/Finish.tsx";
+import Home from "./Routes/Home.tsx";
+import Culture from "./Routes/Culture.tsx";
+import Background from "./Routes/Background.tsx";
+import Name from "./Routes/Name.tsx";
+import Statistics from "./Routes/Statistics.tsx";
+import Calling from "./Routes/Calling.tsx";
+import Finish from "./Routes/Finish.tsx";
 import { ConfigProvider, theme } from "antd";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

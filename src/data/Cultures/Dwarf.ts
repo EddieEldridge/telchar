@@ -1,4 +1,5 @@
-import { Culture } from "../../interfaces/Culture";
+import { Culture } from "../../Types/Culture";
+import { AbilityEnum, Languages, SkillEnum, StandardOfLiving, ToolProficiency } from "../../Types/Generic";
 
 export const DWARF: Culture = {
     imageUrl: "https://i.imgur.com/chLvdKw.png",
@@ -41,60 +42,65 @@ mattocks, a weapon derived from their mining tools.
         ]
     },
     culturalTraits: {
-        abilityScoreIncrease: { constitution: 2 },
+        abilityScoreIncrease: [
+            {
+                name: AbilityEnum.Constitution,
+                value: 2,
+            },
+        ],
         adventuringAge: { min: 50, max: 100 },
         size: "Small",
         heightRange: { min: 4, max: 5 },
         speed: 25,
         weaponProficiencies: ["Battle Axe", "Great Axe", "Mattock"],
-        toolProficiencies: ["Jeweller's Tool", "Mason's Tools", "Smith's Tools"],
-        skillProficiencies: ["Westron", "Khuzdul"],
+        toolProficiencies: [ToolProficiency.JewellersTools, ToolProficiency.MasonsTools, ToolProficiency.SmithsTools],
+        skillProficiencies: [],
         miscProficiencies: ["Armour doesn't impose disadvantage on your fatigue saving throws, and your carrying capacity (including the weight you can carry before you are encumbered or heavily encumbered, and the weight you can push, drag or lift) is doubled."],
-        languages: ["Westron", "Khuzdul"],
-        standardOfLiving: "Prosperous",
+        languages: [Languages.Westron, Languages.Khuzdul],
+        standardOfLiving: StandardOfLiving.Prosperous,
         subculture: ["Dwarves of the Blue Mountains", "Dwarves of Erebor", "Dwarves of the Iron Hills"]
     },
     backgrounds: [
         {
             name: "Bitter Exile",
             description: "Your ancestors fled their home in the far North, and you grew up hearing stories of lost Dwarf-halls fallen to Orc-kind or burnt to cinders by Dragons. It is your ambition to return to those mountains and set things right.",
-            skillProficiencies: ["Explore", "Old Lore"],
+            skillProficiencies: [SkillEnum.Explore, SkillEnum.OldLore],
             toolProficiency: "A musical instrument of your choice",
             distinctiveFeatures: ["Fierce", "Proud"]
         },
         {
             name: "Eloquent Orator",
             description: "The hardships endured by your folk during two ages of the world have inspired many songs. But the words that come easier to your lips are those recounting feats of great cunning, not those about deeds of valour. It is by your ingenuity that you seek the fall of your adversaries.",
-            skillProficiencies: ["Persuasion", "Riddle"],
-            toolProficiency: "Calligrapher's supplies",
+            skillProficiencies: [SkillEnum.Persuasion, SkillEnum.Riddle],
+            toolProficiency: ToolProficiency.CalligraphersSupplies,
             distinctiveFeatures: ["Cunning", "Lordly"]
         },
         {
             name: "Far Trader",
             description: "By the reckoning of the Dwarves, you were only a stripling when you left your home to follow your kin along the trading roads. You have since seen many places and met different folks eager to trade goods for the product of Dwarven handiwork, and your heart burns with a desire to see more.",
-            skillProficiencies: ["Deception", "Travel"],
-            toolProficiency: "Land vehicles",
+            skillProficiencies: [SkillEnum.Deception, SkillEnum.Travel],
+            toolProficiency: ToolProficiency.LandVehicles,
             distinctiveFeatures: ["Cunning", "Proud"]
         },
         {
             name: "The Grief of Azanulbizar",
             description: "A great war was fought between the Dwarves and the Orcs of the Misty Mountains about 170 years ago. The parents and grandparents of most Dwarves, including yours, remember the horrors of that war; you have vowed to mete out justice to all Orc-kind.",
-            skillProficiencies: ["Hunting", "Intimidation"],
-            toolProficiency: "Smith's tools",
+            skillProficiencies: [SkillEnum.Hunting, SkillEnum.Intimidation],
+            toolProficiency: ToolProficiency.SmithsTools,
             distinctiveFeatures: ["Fierce", "Stern"]
         },
         {
             name: "A Life of Toil",
             description: "Your ancestors crafted wondrous things out of shining stones and precious metals, while you have been forced to labour hard in the mines for far less noble ore. Unfortunately, to this day, most ancient Dwarf-holds are no more than Dragon's lairs or Orc-infested pits. You toil patiently, peering into the gloom with eyes hungry for the gleaming of gems and gold.",
-            skillProficiencies: ["Athletics", "Perception"],
-            toolProficiency: "Mason's tools",
+            skillProficiencies: [SkillEnum.Athletics, SkillEnum.Perception],
+            toolProficiency: ToolProficiency.MasonsTools,
             distinctiveFeatures: ["Secretive", "Wilful"]
         },
         {
             name: "A Penetrating Gaze",
             description: "Your elder sibling instructed you to judge others by their deeds, not their words, especially when dealing with the fair-spoken Elves. But in time you have come to trust your instincts above all else, as your heart is not easily swayed. Thieves and liars do not dare to meet your eyes, as you seem able to lay bare their plots.",
-            skillProficiencies: ["Insight", "Investigation"],
-            toolProficiency: "Pipes",
+            skillProficiencies: [SkillEnum.Insight, SkillEnum.Investigation],
+            toolProficiency: ToolProficiency.Pipe,
             distinctiveFeatures: ["Wary", "Wilful"]
         }
     ]

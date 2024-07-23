@@ -1,4 +1,4 @@
-import "../css/App.css";
+import "../Assets/css/App.css";
 
 function Finish() {
   return (
