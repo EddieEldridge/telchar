@@ -1,0 +1,13 @@
+h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+}
+
+#cultureDropdown {
+    width: 75vw;
+    height: 75vh;
+}
+
+.cultureDropown {
+    background-color: red;
+}

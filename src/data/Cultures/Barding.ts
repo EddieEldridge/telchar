@@ -1,7 +1,7 @@
 import { Culture } from "../../interfaces/Culture";
 
 export const BARDING: Culture = {
-    imageUrl: "https://i.imgur.com/AS2kMqG.png",
+    imageUrl: "https://i.imgur.com/Blto2L7.png",
     name: "Bardings",
     description: `
       The Bardings are Northmen of noble origins hailing from Wilderland, far off to the east. 
@@ -38,11 +38,12 @@ export const BARDING: Culture = {
         abilityScoreIncrease: { strength: 1, charisma: 1 },
         adventuringAge: { min: 18, max: 40 },
         size: "Medium",
-        heightRange: { min: 5, max: 6 },
         speed: 30,
-        archersOfDale: true,
-        startingVirtue: true,
-        tradingPeople: true,
+        heightRange: { min: 5, max: 6 },
+        weaponProficiencies: ["Great Bow"],
+        toolProficiencies: ["None"],
+        skillProficiencies: ["Persuasion"],
+        miscProficiencies: ["You gain one cultural virtue of your choice"],
         languages: ["Westron", "Dalish"],
         standardOfLiving: "Prosperous"
     },

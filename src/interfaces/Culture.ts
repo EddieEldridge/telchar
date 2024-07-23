@@ -9,16 +9,18 @@ export type Culture = {
         male: string[];
     };
     culturalTraits: {
-        abilityScoreIncrease: { strength: number; charisma: number };
+        abilityScoreIncrease: { strength?: number; charisma?: number, constitution?: number, wisdom?: number, intelligence?: number, dexterity?: number };
         adventuringAge: { min: number; max: number };
         size: string;
         heightRange: { min: number; max: number };
         speed: number;
-        archersOfDale: boolean;
-        startingVirtue: boolean;
-        tradingPeople: boolean;
+        weaponProficiencies?: string[];
+        toolProficiencies?: string[];
+        skillProficiencies?: string[];
+        miscProficiencies?: string[];
         languages: string[];
         standardOfLiving: string;
+        subculture?: string[]
     };
     backgrounds: Background[];
 };

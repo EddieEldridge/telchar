@@ -2,16 +2,14 @@ import { Button, CollapseProps, Image } from "antd";
 import { NavLink } from "react-router-dom";
 import { Culture } from "../interfaces/Culture";
 import { BARDING } from "../data/Cultures/Barding";
-import { LAKEMAN } from "../data/Cultures/Lakeman";
 import { randomElement, toCommaSeparatedString, upper } from "../utils/Utils";
-
-// Populate an array with all the current cultures
-// Loop through the cultures
-// Generate some HTML from their data defined in their interfaces
+import { ELF } from "../data/Cultures/Elf";
+import { DWARF } from "../data/Cultures/Dwarf";
 
 const CULTURES: Culture[] = [];
 CULTURES.push(BARDING);
-CULTURES.push(LAKEMAN);
+CULTURES.push(DWARF);
+CULTURES.push(ELF);
 
 const CULTURE_DROPDOWNS: CollapseProps["items"] = [];
 
@@ -20,7 +18,7 @@ CULTURES.forEach((c) => {
     key: c.name,
     label: c.name,
     children: (
-      <div>
+      <div className="cultureDropdown">
         {/* Name */}
         <h1>{c.name}</h1>
         {/* Image */}
@@ -41,6 +39,7 @@ CULTURES.forEach((c) => {
           {randomElement(c.typicalNames.male)}, {randomElement(c.typicalNames.male)}, {randomElement(c.typicalNames.male)}, {randomElement(c.typicalNames.male)}, {randomElement(c.typicalNames.male)}
         </p>
         {/* Cultural Traits */}
+        <hr />
         <h2>Cultural Traits</h2>
         <table className="center">
           <tr>
@@ -76,6 +75,21 @@ CULTURES.forEach((c) => {
             <th>Speed</th>
             <td>{c.culturalTraits.speed} ft.</td>
           </tr>
+          {/* Weapon Proficiencies */}
+          <tr>
+            <th>Weapon Proficiencies</th>
+            <td>{toCommaSeparatedString(c.culturalTraits.weaponProficiencies)}</td>
+          </tr>
+          {/* Tool Proficiencies */}
+          <tr>
+            <th>Weapon Proficiencies</th>
+            <td>{toCommaSeparatedString(c.culturalTraits.toolProficiencies)}</td>
+          </tr>
+          {/* Misc. Proficiencies */}
+          <tr>
+            <th>Misc. Proficiencies</th>
+            <td>{toCommaSeparatedString(c.culturalTraits.miscProficiencies)}</td>
+          </tr>
           {/* Languages */}
           <tr>
             <th>Languages</th>
@@ -87,6 +101,21 @@ CULTURES.forEach((c) => {
             <td>{c.culturalTraits.standardOfLiving}</td>
           </tr>
         </table>
+        {/* Backgrounds */}
+        <h2>Backgrounds</h2>
+        {c.backgrounds.map((b) => (
+          <div>
+            <hr />
+            <h3>{b.name}</h3>
+            <p>{b.description}</p>
+            <h4>Skill Proficiencies</h4>
+            <p>{toCommaSeparatedString(b.skillProficiencies)}</p>
+            <h4>Tool Proficiency</h4>
+            <p>{b.toolProficiency}</p>
+            <h4>Distinctive Features</h4>
+            <p>{toCommaSeparatedString(b.distinctiveFeatures)}</p>
+          </div>
+        ))}
         {/* Proceed Button */}
         <NavLink to="/calling">
           <Button>Proceed</Button>

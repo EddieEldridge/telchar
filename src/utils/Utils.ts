@@ -6,6 +6,7 @@ export function upper(string: string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-export function toCommaSeparatedString(languages: string[]): string {
+export function toCommaSeparatedString(languages: string[] | undefined): string {
+    if (!languages) return "";
     return languages.join(", ");
 }

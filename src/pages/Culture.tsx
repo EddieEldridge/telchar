@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "../css/App.css";
+import "../css/Culture.css";
 import { Button, Collapse } from "antd";
 import CULTURE_DROPDOWNS from "../components/Cultures";
 // import CULTURES from "../data/Cultures";
@@ -7,8 +8,10 @@ import CULTURE_DROPDOWNS from "../components/Cultures";
 function Culture() {
   return (
     <>
-      <h1>Select your culture</h1>
-      <Collapse accordion={true} items={CULTURE_DROPDOWNS}></Collapse>
+      <div id="cultureDropdown">
+        <h1>Select your culture</h1>
+        <Collapse accordion={true} items={CULTURE_DROPDOWNS}></Collapse>
+      </div>
     </>
   );
 }
