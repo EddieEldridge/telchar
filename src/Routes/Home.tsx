@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import lotrLogo from "../Assets/images/logo.png";
-import "../Assets/css/App.css";
+import "../Assets/css/General.css";
 
 function Home() {
   return (

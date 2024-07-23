@@ -2,6 +2,7 @@ import { Culture } from "../../Types/Culture";
 import { AbilityEnum, Languages, SkillEnum, StandardOfLiving, ToolProficiency } from "../../Types/Generic";
 
 export const DWARF: Culture = {
+    id: "dwarf",
     imageUrl: "https://i.imgur.com/chLvdKw.png",
     name: "Dwarves of Durin's Folk",
     description: `

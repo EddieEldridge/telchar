@@ -2,6 +2,7 @@ import { Culture } from "../../Types/Culture";
 import { AbilityEnum, Languages, SkillEnum, StandardOfLiving } from "../../Types/Generic";
 
 export const ELF: Culture = {
+    id: "elf",
     imageUrl: "https://i.imgur.com/GDZzx2t.png",
     name: "Elves of Lindon",
     description: "The Fair Folk of Eriador have dwelt in the Westlands since before the drowning of Beleriand. They are all members of the Firstborn, displaying a wisdom beyond the reach of Men. They rarely leave their sanctuaries in the Grey Havens, for these are their fading years. More and more leave Middle-earth sailing West on grey ships, never to return. Those who still remain live mostly along the western coasts, where once were found great kingdoms of their kindred. All Elves are endowed with tremendous vitality and great vigour. They are not subject to illness or old age, and thus can dwell within the circles of the world until they choose to leave it, or are slain. In battle, most Elves carry bows and spears. Many wield swords too, but by ancient tradition some still favour axes.",

@@ -1,17 +1,49 @@
-import "../Assets/css/App.css";
+import "../Assets/css/General.css";
 import "../Assets/css/Culture.css";
-import { Collapse } from "antd";
-import CULTURE_DROPDOWNS from "../Components/Cultures";
+import { Link, NavLink } from "react-router-dom";
+import { BARDING } from "../Data/Cultures/Barding";
+import { DWARF } from "../Data/Cultures/Dwarf";
+import { ELF } from "../Data/Cultures/Elf";
+import { Culture } from "../Types/Culture";
+import CultureInfo from "../Components/CultureInfo";
+import { useState } from "react";
+import lotrLogo from "../Assets/images/logo.png";
 
-function Culture() {
+export const CULTURES: Culture[] = [];
+CULTURES.push(BARDING);
+CULTURES.push(DWARF);
+CULTURES.push(ELF);
+
+function CulturePage() {
+  const [selectedCulture, setSelectedCulture] = useState(CULTURES[0].id);
+
   return (
     <>
-      <div id="cultureDropdown">
-        <h1>Select your culture</h1>
-        <Collapse accordion={true} items={CULTURE_DROPDOWNS}></Collapse>
+      <div className="container">
+        <main>
+          {" "}
+          <aside className="nav">
+            <NavLink to={"/"}>
+              <img src={lotrLogo} className="logo" />
+            </NavLink>
+            {CULTURES.map((culture) => (
+              <Link key={culture.id} onClick={() => setSelectedCulture(culture.id)} to={""}>
+                {culture.name}
+                <hr />
+              </Link>
+            ))}
+          </aside>
+          <div className="content">
+            <h1>Select your culture</h1>
+            <hr />
+            <div id="cultureInfo">
+              <CultureInfo culture={selectedCulture} />
+            </div>
+          </div>
+        </main>
       </div>
     </>
   );
 }
 
-export default Culture;
+export default CulturePage;

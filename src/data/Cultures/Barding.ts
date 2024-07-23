@@ -2,6 +2,7 @@ import { Culture } from "../../Types/Culture";
 import { AbilityEnum, Languages, SkillEnum, StandardOfLiving, ToolProficiency } from "../../Types/Generic";
 
 export const BARDING: Culture = {
+    id: "barding",
     imageUrl: "https://i.imgur.com/Blto2L7.png",
     name: "Bardings",
     description: `

@@ -2,6 +2,7 @@ import { Background } from "./Background";
 import { StandardOfLiving, ToolProficiency, Ability, SkillEnum } from "./Generic";
 
 export type Culture = {
+    id: string;
     name: string;
     imageUrl: string;
     description: string;
