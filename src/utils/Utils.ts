@@ -10,3 +10,7 @@ export function toCommaSeparatedString(languages: string[] | undefined): string 
     if (!languages) return "ERROR";
     return languages.join(", ");
 }
+
+export function log(message: any) {
+    console.log(message);
+}

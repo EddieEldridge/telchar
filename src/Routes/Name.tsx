@@ -2,19 +2,29 @@ import { NavLink } from "react-router-dom";
 import "../Assets/css/General.css";
 import { useContext } from "react";
 import { CharacterContext } from "../Main";
+import lotrLogo from "../Assets/images/logo.png";
 
 function Name() {
   const character = useContext(CharacterContext);
 
   return (
     <>
-      <h1>Select your Name</h1>
-      <p>
-        You have chosen {character.name} with culture {character.Culture?.name} and background {character.Culture?.background.name} and calling {character.Calling?.name}
-      </p>
-      <NavLink to="/statistics">
-        <button>Proceed</button>
-      </NavLink>
+      <div className="container">
+        <main>
+          {" "}
+          {/* Navbar */}
+          <aside className="nav">
+            <NavLink to={"/"}>
+              <img src={lotrLogo} className="logo" />
+            </NavLink>
+          </aside>
+          {/* Content */}
+          <div className="content">
+            <h1>Select your statistics</h1>
+            <hr />
+          </div>
+        </main>
+      </div>
     </>
   );
 }

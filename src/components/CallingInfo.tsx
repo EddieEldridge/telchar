@@ -116,7 +116,7 @@ function CallingInfo(props: { calling: string }) {
         </tr>
       </table>
       <NavLink
-        to="/name"
+        to="/statistics"
         onClick={() => {
           character.Calling = c;
         }}

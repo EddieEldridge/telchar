@@ -128,7 +128,6 @@ h4 {
   line-height: 1.1;
 }
 
-
 /* Logo */
 .logo {
   height: 6em;
@@ -149,20 +148,23 @@ i, p, b {
 
 /* Tables */
 table, th, td {
-  border: 1px solid rgb(255, 255, 255);
+  border: 1px solid #c56301;
   border-collapse: collapse;
+  width: 80vw;
 }
 
 th, td {
   padding: 10px;
   font-size: large;
-}
-
-th {
-  text-align: left;
+  text-align: center;
 }
 
 .center {
   margin-left: auto;
   margin-right: auto;
+}
+
+input {
+  font-size: 20px;
+  background-color: #673300;
 }

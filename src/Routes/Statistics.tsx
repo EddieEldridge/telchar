@@ -2,16 +2,30 @@ import { NavLink } from "react-router-dom";
 import "../Assets/css/General.css";
 import { useContext } from "react";
 import { CharacterContext } from "../Main";
+import StatsPicker from "../Components/StatsPicker";
+import lotrLogo from "../Assets/images/logo.png";
 
 function Statistics() {
   const character = useContext(CharacterContext);
 
   return (
     <>
-      <h1>Select your Statistics</h1>
-      <NavLink to="/finish">
-        <button>Proceed</button>
-      </NavLink>
+      <div className="container">
+        <main>
+          {" "}
+          {/* Navbar */}
+          <aside className="nav">
+            <NavLink to={"/"}>
+              <img src={lotrLogo} className="logo" />
+            </NavLink>
+          </aside>
+          {/* Content */}
+          <div className="content">
+            <h1>Select your statistics</h1>
+            <StatsPicker></StatsPicker>
+          </div>
+        </main>
+      </div>
     </>
   );
 }
