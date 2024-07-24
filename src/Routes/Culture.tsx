@@ -22,17 +22,27 @@ function CulturePage() {
       <div className="container">
         <main>
           {" "}
+          {/* Navbar */}
           <aside className="nav">
             <NavLink to={"/"}>
               <img src={lotrLogo} className="logo" />
             </NavLink>
+            <hr />
+            <Link to={""} onClick={() => setSelectedCulture("info")}>
+              Cultures of Middle-earth
+            </Link>
+            <hr />
+            {/* List of cultures */}
             {CULTURES.map((culture) => (
-              <Link key={culture.id} onClick={() => setSelectedCulture(culture.id)} to={""}>
-                {culture.name}
+              <>
+                <Link key={culture.id} onClick={() => setSelectedCulture(culture.id)} to={""}>
+                  {culture.name}
+                </Link>
                 <hr />
-              </Link>
+              </>
             ))}
           </aside>
+          {/* Content */}
           <div className="content">
             <h1>Select your culture</h1>
             <hr />
