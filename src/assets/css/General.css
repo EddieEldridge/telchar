@@ -70,6 +70,10 @@ a:hover {
   color: #f2b553;
 }
 
+h1, h2, h3 {
+  color: #c56301
+}
+
 button {
   height: auto;
   min-width: 20%;
@@ -80,13 +84,15 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #c56301;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 
 button:hover {
-  border-color: #9c5d00;
+  background-color: #673300;
+
+  border-color: #1a1000;
 }
 /* */
 
