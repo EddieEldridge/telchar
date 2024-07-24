@@ -5,7 +5,7 @@
 
   color-scheme: dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #d12525;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,12 +15,13 @@
 
 /* Layout */
 #root {
+  background-color: #4b4031;
   text-align: center;
-  height: 100%;
-  width: 100vw;
 }
 
 main {
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
   display: flex;
 
@@ -36,7 +37,8 @@ main {
 
 .container {
   display: flex;
-  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
 }
 
 .nav {
@@ -47,10 +49,11 @@ main {
 }
 
 .content {
+  width: 100vw;
+  height: 100vh;
   padding: 50px;
   overflow: auto;
   background-color: #111;
-
 }
 
 /* */
@@ -62,6 +65,7 @@ a {
   color: #c56301;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #f2b553;
 }
