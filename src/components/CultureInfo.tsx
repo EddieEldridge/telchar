@@ -2,14 +2,17 @@ import { NavLink } from "react-router-dom";
 import { CULTURES } from "../Routes/Culture";
 import { randomElement, toCommaSeparatedString, upper } from "../Utils/Utils";
 import { Image } from "antd";
+import { useContext, useState } from "react";
+import { CharacterContext } from "../Main";
 
 function CultureInfo(props: { culture: string }) {
   const c = CULTURES.find((c) => c.id === props.culture);
+  const character = useContext(CharacterContext);
 
   // Info about what cultures are
   if (props.culture == "info") {
     return (
-      <div className="cultureInfo">
+      <div className="info">
         <h1>Cultures of Middle-earth</h1>
         In Middle-earth, the culture to which an adventurer belongs often defines them more profoundly than simply in terms of customs and traditions. For this reason, the most important choice that
         players must make is to select the culture of origin of their adventurers. Each heroic culture's writeup is composed along the same format of presentation, illustrated in the following
@@ -48,7 +51,7 @@ function CultureInfo(props: { culture: string }) {
 
   // Specific culture info
   return (
-    <div className="cultureInfo" id={c.id}>
+    <div className="info" id={c.id}>
       {/* Name */}
       <h1>{c.name}</h1>
       {/* Image */}
@@ -143,7 +146,13 @@ function CultureInfo(props: { culture: string }) {
           <h4>Distinctive Features</h4>
           <p>{toCommaSeparatedString(b.distinctiveFeatures)}</p>
           {/* Proceed Button */}
-          <NavLink to="/calling">
+          <NavLink
+            to="/calling"
+            onClick={() => {
+              character.Culture = c;
+              character.Culture.background = b;
+            }}
+          >
             <button>Select "{b.name}"</button>
           </NavLink>
         </div>

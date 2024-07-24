@@ -11,11 +11,12 @@
   5. Men of Bree
   6. Rangers of the North
 
-## 2. Select Calling
+## 2. Select Background
+
+
+## 3. Select Calling
 - Select one of 6 callings
 ![alt text](image-1.png)
-
-## 3. Select Background
 
 ## 4. Select Name
 

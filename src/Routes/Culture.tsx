@@ -1,5 +1,4 @@
 import "../Assets/css/General.css";
-import "../Assets/css/Culture.css";
 import { Link, NavLink } from "react-router-dom";
 import { BARDING } from "../Data/Cultures/Barding";
 import { DWARF } from "../Data/Cultures/Dwarf";
@@ -46,7 +45,7 @@ function CulturePage() {
           <div className="content">
             <h1>Select your culture</h1>
             <hr />
-            <div id="cultureInfo">
+            <div id="info">
               <CultureInfo culture={selectedCulture} />
             </div>
           </div>

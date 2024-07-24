@@ -3,9 +3,9 @@ import { Culture } from "./Culture";
 
 export type Character = {
     name: string;
-    imageUrl: string;
-    Culture: Culture;
-    Calling: Calling;
+    imageUrl?: string;
+    Culture?: Culture;
+    Calling?: Calling;
 };
 
 

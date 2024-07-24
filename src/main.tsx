@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, createContext, StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import "./Assets/css/General.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -7,28 +7,35 @@ import CulturePage from "./Routes/Culture.tsx";
 import Background from "./Routes/Background.tsx";
 import Name from "./Routes/Name.tsx";
 import Statistics from "./Routes/Statistics.tsx";
-import Calling from "./Routes/Calling.tsx";
+import CallingPage from "./Routes/Calling.tsx";
 import Finish from "./Routes/Finish.tsx";
 import { ConfigProvider, theme } from "antd";
+import { Character } from "./Types/Character.ts";
+
+// Global State
+const defaultCharacter: Character = { name: "Medik" };
+export const CharacterContext = createContext<Character>(defaultCharacter);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
+  <StrictMode>
     <ConfigProvider
       theme={{
         algorithm: theme.darkAlgorithm,
       }}
     >
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/culture" element={<CulturePage />} />
-          <Route path="/calling" element={<Calling />} />
-          <Route path="/background" element={<Background />} />
-          <Route path="/name" element={<Name />} />
-          <Route path="/statistics" element={<Statistics />} />
-          <Route path="/finish" element={<Finish />} />
-        </Routes>
+        <CharacterContext.Provider value={defaultCharacter}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/culture" element={<CulturePage />} />
+            <Route path="/calling" element={<CallingPage />} />
+            <Route path="/background" element={<Background />} />
+            <Route path="/name" element={<Name />} />
+            <Route path="/statistics" element={<Statistics />} />
+            <Route path="/finish" element={<Finish />} />
+          </Routes>
+        </CharacterContext.Provider>
       </BrowserRouter>
     </ConfigProvider>
-  </React.StrictMode>
+  </StrictMode>
 );
