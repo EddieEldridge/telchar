@@ -1,7 +1,7 @@
 # Telchar
 
 
-![](./src/Assets/images/README.png)
+![](https://raw.githubusercontent.com/EddieEldridge/telchar/master/src/assets/images/README.png)
 
 
 ## Description
