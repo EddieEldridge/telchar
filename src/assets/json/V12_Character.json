@@ -1,5 +1,5 @@
 {
-  "name": "Test Actor",
+  "name": "Template",
   "type": "character",
   "img": "icons/svg/mystery-man.svg",
   "system": {
@@ -463,7 +463,7 @@
           "mode": 0
         },
         "success": 0,
-        "failure": 0
+        "failure": 1
       },
       "inspiration": false
     },
@@ -476,9 +476,9 @@
       "ideal": "",
       "bond": "",
       "flaw": "",
-      "race": null,
-      "background": null,
-      "originalClass": "",
+      "race": "qqdbBY2Zh2Thpdo9",
+      "background": "dh2RklsI6Libujoi",
+      "originalClass": "ZVvo1FiDFGGHKjwf",
       "xp": {
         "value": 0
       },
@@ -549,7 +549,7 @@
     "favorites": []
   },
   "prototypeToken": {
-    "name": "Test Actor",
+    "name": "Template",
     "displayName": 0,
     "actorLink": true,
     "appendNumber": false,
@@ -636,7 +636,183 @@
     "flags": {},
     "randomImg": false
   },
-  "items": [],
+  "items": [
+    {
+      "name": "DEFAULT_CULTURE",
+      "type": "race",
+      "_id": "qqdbBY2Zh2Thpdo9",
+      "img": "systems/dnd5e/icons/svg/items/race.svg",
+      "system": {
+        "description": {
+          "value": "",
+          "chat": ""
+        },
+        "source": {
+          "custom": ""
+        },
+        "advancement": [
+          {
+            "type": "AbilityScoreImprovement",
+            "_id": "ddI1sE1spXt01bGg",
+            "configuration": {
+              "points": 0,
+              "fixed": {},
+              "cap": 2
+            },
+            "value": {
+              "type": "asi",
+              "assignments": {}
+            },
+            "level": 0
+          },
+          {
+            "type": "Size",
+            "_id": "ZDrF3pngbiOYmIKl",
+            "configuration": {
+              "sizes": ["med"]
+            },
+            "level": 0,
+            "value": {
+              "size": "med"
+            }
+          },
+          {
+            "type": "Trait",
+            "configuration": {
+              "grants": ["languages:standard:common"],
+              "mode": "default",
+              "allowReplacements": false,
+              "choices": []
+            },
+            "_id": "DuYDWe3JPaSiEVgv",
+            "value": {
+              "chosen": []
+            },
+            "level": 0
+          }
+        ],
+        "movement": {
+          "burrow": null,
+          "climb": null,
+          "fly": null,
+          "swim": null,
+          "walk": null,
+          "units": null,
+          "hover": false
+        },
+        "senses": {
+          "darkvision": null,
+          "blindsight": null,
+          "tremorsense": null,
+          "truesight": null,
+          "units": null,
+          "special": ""
+        },
+        "type": {
+          "value": "humanoid"
+        },
+        "identifier": ""
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "BIB5FQ0ni7hVx0rk": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Item.l2TgejeKq9WD9D5P",
+        "duplicateSource": null,
+        "coreVersion": "12.329",
+        "systemId": "dnd5e",
+        "systemVersion": "3.3.1",
+        "createdTime": 1721906213050,
+        "modifiedTime": 1721906213050,
+        "lastModifiedBy": "BIB5FQ0ni7hVx0rk"
+      }
+    },
+    {
+      "name": "DEFAULT_BACKGROUND",
+      "type": "background",
+      "_id": "dh2RklsI6Libujoi",
+      "img": "systems/dnd5e/icons/svg/items/background.svg",
+      "system": {
+        "description": {
+          "value": "",
+          "chat": ""
+        },
+        "source": {
+          "custom": ""
+        },
+        "startingEquipment": [],
+        "identifier": "",
+        "advancement": []
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "BIB5FQ0ni7hVx0rk": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Item.yl8dFYH2gyKZtN6F",
+        "duplicateSource": null,
+        "coreVersion": "12.329",
+        "systemId": "dnd5e",
+        "systemVersion": "3.3.1",
+        "createdTime": 1721906226201,
+        "modifiedTime": 1721906226201,
+        "lastModifiedBy": "BIB5FQ0ni7hVx0rk"
+      }
+    },
+    {
+      "name": "DEFAULT_CALLING",
+      "type": "class",
+      "_id": "ZVvo1FiDFGGHKjwf",
+      "img": "systems/dnd5e/icons/svg/items/class.svg",
+      "system": {
+        "description": {
+          "value": "",
+          "chat": ""
+        },
+        "source": {
+          "custom": ""
+        },
+        "startingEquipment": [],
+        "identifier": "new-item",
+        "levels": 1,
+        "hitDice": "d6",
+        "hitDiceUsed": 0,
+        "advancement": [],
+        "spellcasting": {
+          "progression": "none",
+          "ability": ""
+        },
+        "wealth": ""
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "BIB5FQ0ni7hVx0rk": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Item.KI6cwVSj1r7gFjTe",
+        "duplicateSource": null,
+        "coreVersion": "12.329",
+        "systemId": "dnd5e",
+        "systemVersion": "3.3.1",
+        "createdTime": 1721906482797,
+        "modifiedTime": 1721906482797,
+        "lastModifiedBy": "BIB5FQ0ni7hVx0rk"
+      }
+    }
+  ],
   "effects": [],
   "folder": null,
   "flags": {
@@ -651,8 +827,8 @@
     "coreVersion": "12.329",
     "systemId": "dnd5e",
     "systemVersion": "3.3.1",
-    "createdTime": 1721822599644,
-    "modifiedTime": 1721822599644,
+    "createdTime": 1721906132536,
+    "modifiedTime": 1721906482806,
     "lastModifiedBy": "BIB5FQ0ni7hVx0rk"
   }
 }
