@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, redirect } from "react-router-dom";
 import "../Assets/css/General.css";
 import { useContext } from "react";
 import { CharacterContext } from "../Main";
@@ -7,6 +7,10 @@ import lotrLogo from "../Assets/images/logo.png";
 
 function Statistics() {
   const character = useContext(CharacterContext);
+
+  if (!character) {
+    redirect("/");
+  }
 
   return (
     <>

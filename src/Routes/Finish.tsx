@@ -1,13 +1,18 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, redirect } from "react-router-dom";
 import "../Assets/css/General.css";
 import lotrLogo from "../Assets/images/logo.png";
 import { useContext } from "react";
 import { CharacterContext } from "../Main";
 import { upper } from "../Utils/Utils";
 import { DownloadButton } from "../Components/DownloadButton";
+import { characterToFoundry } from "../Utils/Converter";
 
 function Finish() {
   const character = useContext(CharacterContext);
+
+  if (!character) {
+    redirect("/");
+  }
 
   return (
     <>
@@ -49,7 +54,8 @@ function Finish() {
                 ))}
               </tbody>
             </table>
-            <DownloadButton fileContent={JSON.stringify(character)} fileName={character.name} />
+            <button onClick={() => characterToFoundry(character)}>Save Character</button>
+            {/* <DownloadButton fileContent={JSON.stringify(character)} fileName={character.name} /> */}
             <br></br>
             <br></br>
             <br></br>

@@ -1,16 +1,22 @@
 import "../Assets/css/General.css";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, redirect } from "react-router-dom";
 import CallingInfo from "../Components/CallingInfo";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import lotrLogo from "../Assets/images/logo.png";
 import { Calling } from "../Types/Calling";
 import { CAPTAIN } from "../Data/Callings/Captain";
+import { CharacterContext } from "../Main";
 
 export const CALLINGS: Calling[] = [];
 CALLINGS.push(CAPTAIN);
 
 function CallingPage() {
   const [selectedCalling, setSelectedCalling] = useState(CALLINGS[0].id);
+  const character = useContext(CharacterContext);
+
+  if (!character) {
+    redirect("/");
+  }
 
   return (
     <>

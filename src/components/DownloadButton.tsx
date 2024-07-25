@@ -1,18 +1,10 @@
-export const DownloadButton = ({ fileContent, fileName }) => {
-  const handleDownload = () => {
-    const blob = new Blob([fileContent], { type: "application/json" });
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = fileName;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+import { createDownload } from "../Utils/Utils";
 
+export const DownloadButton = ({ fileContent, fileName }: { fileContent: any; fileName: string }) => {
   return (
     <div>
       <div>
-        <button onClick={handleDownload}>Export Character</button>
+        <button onClick={() => createDownload(fileContent, fileName)}>Export Character</button>
       </div>
     </div>
   );

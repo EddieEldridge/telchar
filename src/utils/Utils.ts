@@ -14,3 +14,13 @@ export function toCommaSeparatedString(languages: string[] | undefined): string 
 export function log(message: any) {
     console.log(message);
 }
+
+export function createDownload(fileContent: BlobPart, fileName: string) {
+    const blob = new Blob([fileContent], { type: "application/json" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+};
