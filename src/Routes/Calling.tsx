@@ -1,11 +1,11 @@
 import "../Assets/css/General.css";
-import { Link, NavLink, redirect } from "react-router-dom";
+import { Link, redirect } from "react-router-dom";
 import CallingInfo from "../Components/CallingInfo";
 import { useContext, useState } from "react";
-import lotrLogo from "../Assets/images/logo.png";
 import { Calling } from "../Types/Calling";
 import { CAPTAIN } from "../Data/Callings/Captain";
 import { CharacterContext } from "../Main";
+import { Logo } from "../Components/Logo";
 
 export const CALLINGS: Calling[] = [];
 CALLINGS.push(CAPTAIN);
@@ -25,9 +25,7 @@ function CallingPage() {
           {" "}
           {/* Navbar */}
           <aside className="nav">
-            <NavLink to={"/"}>
-              <img src={lotrLogo} className="logo" />
-            </NavLink>
+            <Logo />
             <hr />
             <Link to={""} onClick={() => setSelectedCalling("info")}>
               Callings of Middle-earth

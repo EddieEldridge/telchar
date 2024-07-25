@@ -1,10 +1,9 @@
-import { useState, createContext, StrictMode } from "react";
+import { createContext, StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import "./Assets/css/General.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Routes/Home.tsx";
 import CulturePage from "./Routes/Culture.tsx";
-import Background from "./Routes/Background.tsx";
 import Name from "./Routes/Name.tsx";
 import Statistics from "./Routes/Statistics.tsx";
 import CallingPage from "./Routes/Calling.tsx";
@@ -29,7 +28,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <Route path="/" element={<Home />} />
             <Route path="/culture" element={<CulturePage />} />
             <Route path="/calling" element={<CallingPage />} />
-            <Route path="/background" element={<Background />} />
             <Route path="/name" element={<Name />} />
             <Route path="/statistics" element={<Statistics />} />
             <Route path="/finish" element={<Finish />} />

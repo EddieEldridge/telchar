@@ -1,11 +1,10 @@
-import { NavLink, redirect } from "react-router-dom";
+import { redirect } from "react-router-dom";
 import "../Assets/css/General.css";
-import lotrLogo from "../Assets/images/logo.png";
 import { useContext } from "react";
 import { CharacterContext } from "../Main";
 import { upper } from "../Utils/Utils";
-import { DownloadButton } from "../Components/DownloadButton";
 import { characterToFoundry } from "../Utils/Converter";
+import { Logo } from "../Components/Logo";
 
 function Finish() {
   const character = useContext(CharacterContext);
@@ -21,9 +20,7 @@ function Finish() {
           {" "}
           {/* Navbar */}
           <aside className="nav">
-            <NavLink to={"/"}>
-              <img src={lotrLogo} className="logo" />
-            </NavLink>
+            <Logo />
           </aside>
           {/* Content */}
           <div className="content">

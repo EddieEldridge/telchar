@@ -1,20 +1,26 @@
 import { NavLink } from "react-router-dom";
-import lotrLogo from "../Assets/images/logo.png";
 import "../Assets/css/General.css";
+import rpLogo from "../Assets/images/lotr_logo.png";
+import foundryLogo from "../Assets/images/foundry_logo.png";
 
 function Home() {
   return (
     <>
-      <div>
-        <a href="https://freeleaguepublishing.com/games/the-lord-of-the-rings-roleplaying/" target="_blank">
-          <img src={lotrLogo} className="logo" alt="Vite logo" />
-        </a>
-      </div>
-      <h1>The Lord of the Rings™ Roleplaying</h1>
-      <h3>Create fantastic new characters ready for import into FoundryVTT</h3>
-      <NavLink to="/culture">
-        <button>Create my character</button>
-      </NavLink>
+      <main className="background">
+        {/* Content */}
+        <div className="content homepage">
+          {/* <h1>The Lord of the Rings™ Roleplaying</h1> */}
+          <img src={rpLogo} width={"50%"}></img>
+          <h3>Create fantastic new characters ready for import into FoundryVTT</h3>
+          <img src={foundryLogo} height={"10%"}></img>
+          <br />
+          <br />
+          <NavLink to="/culture">
+            <button>Enter</button>
+          </NavLink>
+        </div>
+      </main>
+      <div></div>
     </>
   );
 }
