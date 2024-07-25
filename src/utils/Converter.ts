@@ -25,17 +25,63 @@ export async function readJSONRemote(url: string): Promise<any> {
     }
 }
 
-// export function writeJSON(jsonFileName: string, data: any) {
-//     const path = `${JSON_FOLDER}/${jsonFileName}`;
+type JsonObject = { [key: string]: any };
 
-//     const jsonString = JSON.stringify(data, null, 2);
-//     fs.writeFileSync(path, jsonString);
-// }
+function findAndUpdate<T extends Record<string, any>>(
+    array: T[],
+    searchKey: keyof T,
+    searchValue: any,
+    updateKey: keyof T,
+    updateValue: any
+): boolean {
+    try {
+        // Ensure the array is valid
+        if (!Array.isArray(array)) {
+            console.error('The provided `array` is not an array.');
+            return false;
+        }
+
+        // Find the item in the array
+        const item = array.find((element) => element[searchKey] === searchValue);
+
+        // Log the item that was found or not found
+        if (item) {
+            // Update the item
+            if (updateKey in item) {
+                (item as any)[updateKey] = updateValue; // Use type assertion to allow update
+                console.log(`Item with ${String(searchKey)}=${searchValue} updated:`, item);
+                return true;
+            } else {
+                console.error(`Update key '${String(updateKey)}' does not exist on the item.`);
+                return false;
+            }
+        } else {
+            console.error(`Item with ${String(searchKey)}=${searchValue} not found.`);
+            return false;
+        }
+    } catch (error) {
+        // Catch and log any unexpected errors
+        console.error('An unexpected error occurred:', error);
+        return false;
+    }
+}
 
 export async function characterToFoundry(character: Character) {
-    const template = await readJSONRemote(JSON_TEMPLATE_URL);
-    console.debug("Template:", template);
-    template.name = character.name;
-    createDownload(JSON.stringify(template), character.name);
-    // writeJSON(`${JSON_FOLDER}/${character.name}.json`, template);
+    const t = await readJSONRemote(JSON_TEMPLATE_URL);
+    console.debug("Template:", t);
+
+    // Mappings
+    // Name
+    t.name = character.name;
+
+    // Culture
+    findAndUpdate(t.items, "type", "race", "name", character.Culture.name);
+
+    // Background
+    findAndUpdate(t.items, "type", "background", "name", character.Culture.chosenBackground.name);
+
+    // Calling
+    findAndUpdate(t.items, "type", "class", "name", character.Calling.name);
+
+    createDownload(JSON.stringify(t), character.name);
 }
