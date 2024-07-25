@@ -1,30 +1,16 @@
-# React + TypeScript + Vite
+# Telchar
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+![](./src/Assets/images/README.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Description
+A character creation tool that will assist in creating characters *ready for import* directly into FoundryVTT. 
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Select your Culture, Background, Calling, Equipment, Statistics and more and simply import the generated JSON file into Foundry to instantly create a ready to play character!
 
-- Configure the top-level `parserOptions` property like this:
+## Website
+Coming soon!
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## What is The Lord of the Rings: Roleplaying?
+You can find out more here on [Free League's official website!](https://freeleaguepublishing.com/games/the-lord-of-the-rings-roleplaying/)
