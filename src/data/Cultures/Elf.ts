@@ -29,7 +29,7 @@ export const ELF: Culture = {
         standardOfLiving: StandardOfLiving.Frugal,
         subculture: ["Elves of Lindon"]
     },
-    backgrounds: [
+    availableBackgrounds: [
         {
             name: "The Call of the Sea",
             description: "No Elf could live by the Sea and not be moved by it. The crashing of waves is a second heartbeat to you; but you do not want to depart Middle-earth yet, for you feel that you have some purpose to fulfil before you sail away. You are not certain what lies in your future, but you are committed to finding out.",

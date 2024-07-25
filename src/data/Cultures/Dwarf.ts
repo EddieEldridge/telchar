@@ -61,7 +61,7 @@ mattocks, a weapon derived from their mining tools.
         standardOfLiving: StandardOfLiving.Prosperous,
         subculture: ["Dwarves of the Blue Mountains", "Dwarves of Erebor", "Dwarves of the Iron Hills"]
     },
-    backgrounds: [
+    availableBackgrounds: [
         {
             name: "Bitter Exile",
             description: "Your ancestors fled their home in the far North, and you grew up hearing stories of lost Dwarf-halls fallen to Orc-kind or burnt to cinders by Dragons. It is your ambition to return to those mountains and set things right.",

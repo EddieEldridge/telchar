@@ -134,7 +134,7 @@ function CultureInfo(props: { culture: string }) {
       </table>
       {/* Backgrounds */}
       <h2>Backgrounds</h2>
-      {c.backgrounds.map((b) => (
+      {c.availableBackgrounds.map((b) => (
         <div>
           <hr />
           <h3>{b.name}</h3>
@@ -150,7 +150,7 @@ function CultureInfo(props: { culture: string }) {
             to="/calling"
             onClick={() => {
               character.Culture = c;
-              character.Culture.background = b;
+              character.Culture.chosenBackground = b;
             }}
           >
             <button>Select "{b.name}"</button>

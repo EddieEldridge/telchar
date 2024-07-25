@@ -128,7 +128,7 @@ function StatsPicker() {
       <h2>Total Points Remaining: {points}</h2>
       <br />
       <NavLink
-        to="/statistics"
+        to="/finish"
         onClick={() => {
           character.Statistics = stats;
         }}
