@@ -58,6 +58,7 @@ export const BARDING: Culture = {
         languages: [Languages.Westron, Languages.Sindarin],
         standardOfLiving: StandardOfLiving.Prosperous
     },
+    chosenBackground: undefined,
     availableBackgrounds: [
         {
             name: "Dragon Stories",

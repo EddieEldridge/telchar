@@ -31,7 +31,7 @@ function Finish() {
             <h2>Culture</h2>
             <p>{character.Culture?.name ?? "Not selected"}</p>
             <h2>Background</h2>
-            <p>{character.Culture?.chosenBackground.name ?? "Not selected"}</p>
+            <p>{character.Culture?.chosenBackground?.name ?? "Not selected"}</p>
             <h2>Calling</h2>
             <p>{character.Calling?.name ?? "Not selected"}</p>
             <h2>Statistics</h2>
@@ -43,7 +43,7 @@ function Finish() {
                 </tr>
               </thead>
               <tbody>
-                {Object.entries(character.Statistics).map(([stat, value]) => (
+                {Object.entries(character.Statistics ?? {}).map(([stat, value]) => (
                   <tr key={stat} className="stat">
                     <td>{upper(stat)}</td>
                     <td>{value.score ?? "Not selected"}</td>

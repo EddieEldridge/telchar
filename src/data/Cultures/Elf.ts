@@ -29,6 +29,7 @@ export const ELF: Culture = {
         standardOfLiving: StandardOfLiving.Frugal,
         subculture: ["Elves of Lindon"]
     },
+    chosenBackground: undefined,
     availableBackgrounds: [
         {
             name: "The Call of the Sea",

@@ -1,0 +1,15 @@
+name: Building Telchar
+run-name: Build project
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      # Build
+      - uses: oven-sh/setup-bun@v2
+      - run: bun run build
+

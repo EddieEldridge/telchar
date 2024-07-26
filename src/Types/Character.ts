@@ -5,9 +5,9 @@ import { Culture } from "./Culture";
 export type Character = {
     name: string;
     imageUrl?: string;
-    Culture: Culture;
-    Calling: Calling;
-    Statistics: Statistics;
+    Culture: Culture | undefined;
+    Calling: Calling | undefined;
+    Statistics: Statistics | undefined;
 };
 
 

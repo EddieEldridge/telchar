@@ -12,7 +12,7 @@ import { ConfigProvider, theme } from "antd";
 import { Character } from "./Types/Character.ts";
 
 // Global State
-const defaultCharacter: Character = { name: `Medik-${Date.now().toString()}` };
+const defaultCharacter: Character = { name: `Medik-${Date.now().toString()}`, Culture: undefined, Calling: undefined, Statistics: undefined };
 export const CharacterContext = createContext<Character>(defaultCharacter);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

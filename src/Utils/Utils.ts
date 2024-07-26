@@ -11,7 +11,7 @@ export function toCommaSeparatedString(languages: string[] | undefined): string 
     return languages.join(", ");
 }
 
-export function log(message: any) {
+export function log(message: string) {
     console.log(message);
 }
 

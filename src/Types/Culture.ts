@@ -24,7 +24,7 @@ export type Culture = {
         standardOfLiving: StandardOfLiving;
         subculture?: string[]
     };
-    chosenBackground: Background;
+    chosenBackground: Background | undefined;
     availableBackgrounds: Background[];
 };
 

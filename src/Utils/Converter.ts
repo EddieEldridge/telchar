@@ -67,6 +67,10 @@ function findAndUpdate<T extends Record<string, any>>(
 }
 
 export async function characterToFoundry(character: Character) {
+    if (!character || !character.Culture || !character.Calling || !character.Statistics) {
+        return
+    }
+
     const t = await readJSONRemote(JSON_TEMPLATE_URL);
     console.debug("Template:", t);
 
@@ -78,7 +82,7 @@ export async function characterToFoundry(character: Character) {
     findAndUpdate(t.items, "type", "race", "name", character.Culture.name);
 
     // Background
-    findAndUpdate(t.items, "type", "background", "name", character.Culture.chosenBackground.name);
+    findAndUpdate(t.items, "type", "background", "name", character.Culture.chosenBackground?.name);
 
     // Calling
     findAndUpdate(t.items, "type", "class", "name", character.Calling.name);
