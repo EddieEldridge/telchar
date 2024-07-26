@@ -1,8 +1,8 @@
 import "../Assets/css/General.css";
 import { Link } from "react-router-dom";
-import { BARDING } from "../Data/Cultures/Barding";
-import { DWARF } from "../Data/Cultures/Dwarf";
-import { ELF } from "../Data/Cultures/Elf";
+import { BARDING } from "../temp/Cultures/Barding";
+import { DWARF } from "../temp/Cultures/Dwarf";
+import { ELF } from "../temp/Cultures/Elf";
 import { Culture } from "../Types/Culture";
 import CultureInfo from "../temp/CultureInfo";
 import { useState } from "react";
