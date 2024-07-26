@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { log, upper } from "../Utils/Utils";
+import { log, upper } from "../temp/Utils";
 import { useContext, useState } from "react";
 import { CharacterContext } from "../Main";
 import { AbilityEnum } from "../Types/Generic";

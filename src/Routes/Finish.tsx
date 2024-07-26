@@ -2,8 +2,8 @@ import { redirect } from "react-router-dom";
 import "../Assets/css/General.css";
 import { useContext } from "react";
 import { CharacterContext } from "../Main";
-import { upper } from "../Utils/Utils";
-import { characterToFoundry } from "../Utils/Converter";
+import { upper } from "../temp/Utils";
+import { characterToFoundry } from "../temp/Converter";
 import { Logo } from "../temp/Logo";
 
 function Finish() {
