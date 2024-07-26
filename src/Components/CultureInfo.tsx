@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { CULTURES } from "../Routes/Culture";
-import { randomElement, toCommaSeparatedString, upper } from "../Utils";
+import { randomElement, toCommaSeparatedString, upper } from "../Utils/Utils";
 import { Image } from "antd";
 import { useContext } from "react";
 import { CharacterContext } from "../Main";

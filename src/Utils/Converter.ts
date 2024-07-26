@@ -3,7 +3,6 @@ import { Character } from '../Types/Character';
 import { createDownload } from './Utils';
 import axios from 'axios';
 
-const JSON_FOLDER = "../Assets/json"
 const JSON_TEMPLATE_URL = "https://raw.githubusercontent.com/EddieEldridge/telchar/master/src/assets/json/V12_Character.json"
 
 // export function readJSON(jsonFileName: string) {
@@ -24,8 +23,6 @@ export async function readJSONRemote(url: string): Promise<any> {
         throw error;
     }
 }
-
-type JsonObject = { [key: string]: any };
 
 function findAndUpdate<T extends Record<string, any>>(
     array: T[],

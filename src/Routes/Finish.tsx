@@ -2,9 +2,9 @@ import { redirect } from "react-router-dom";
 import "../Assets/css/General.css";
 import { useContext } from "react";
 import { CharacterContext } from "../Main";
-import { upper } from "../Utils";
-import { characterToFoundry } from "../Converter";
-import { Logo } from "../Logo";
+import { Logo } from "../Components/Logo";
+import { upper } from "../Utils/Utils";
+import { characterToFoundry } from "../Utils/Converter";
 
 function Finish() {
   const character = useContext(CharacterContext);
@@ -43,12 +43,14 @@ function Finish() {
                 </tr>
               </thead>
               <tbody>
-                {Object.entries(character.Statistics ?? {}).map(([stat, value]) => (
-                  <tr key={stat} className="stat">
-                    <td>{upper(stat)}</td>
-                    <td>{value.score ?? "Not selected"}</td>
-                  </tr>
-                ))}
+                {Object.entries(character.Statistics ?? {}).map(([stat, value]) => {
+                  return (
+                    <tr key={stat} className="stat">
+                      <td>{upper(stat)}</td>
+                      <td>{value.score ?? "Not selected"}</td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
             <button onClick={() => characterToFoundry(character)}>Save Character</button>

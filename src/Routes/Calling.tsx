@@ -1,12 +1,13 @@
 import "../Assets/css/General.css";
 import { Link, redirect } from "react-router-dom";
-import CallingInfo from "../CallingInfo";
 import { useContext, useState } from "react";
 import { Calling } from "../Types/Calling";
-import { CAPTAIN } from "../Callings/Captain";
 import { CharacterContext } from "../Main";
-import { Logo } from "../Logo";
+import { CAPTAIN } from "../Data/Callings/Captain";
+import { Logo } from "../Components/Logo";
+import CallingInfo from "../Components/CallingInfo";
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const CALLINGS: Calling[] = [];
 CALLINGS.push(CAPTAIN);
 

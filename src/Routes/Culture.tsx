@@ -1,12 +1,12 @@
 import "../Assets/css/General.css";
 import { Link } from "react-router-dom";
-import { BARDING } from "../Cultures/Barding";
-import { DWARF } from "../Cultures/Dwarf";
-import { ELF } from "../Cultures/Elf";
 import { Culture } from "../Types/Culture";
-import CultureInfo from "../CultureInfo";
 import { useState } from "react";
-import { Logo } from "../Logo";
+import { Logo } from "../Components/Logo";
+import CultureInfo from "../Components/CultureInfo";
+import { DWARF } from "../Data/Cultures/Dwarf";
+import { BARDING } from "../Data/Cultures/Barding";
+import { ELF } from "../Data/Cultures/Elf";
 
 export const CULTURES: Culture[] = [];
 CULTURES.push(BARDING);

@@ -2,8 +2,8 @@ import { NavLink, redirect } from "react-router-dom";
 import "../Assets/css/General.css";
 import { useContext } from "react";
 import { CharacterContext } from "../Main";
-import StatsPicker from "../StatsPicker";
 import lotrLogo from "../Assets/images/logo.png";
+import StatsPicker from "../Components/StatsPicker";
 
 function Statistics() {
   const character = useContext(CharacterContext);
