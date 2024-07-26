@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { CharacterContext } from "../Main";
 import { upper } from "../Utils/Utils";
 import { characterToFoundry } from "../Utils/Converter";
-import { Logo } from "../Components/Logo";
+import { Logo } from "../temp/Logo";
 
 function Finish() {
   const character = useContext(CharacterContext);

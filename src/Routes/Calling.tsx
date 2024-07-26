@@ -1,11 +1,11 @@
 import "../Assets/css/General.css";
 import { Link, redirect } from "react-router-dom";
-import CallingInfo from "../Components/CallingInfo";
+import CallingInfo from "../temp/CallingInfo";
 import { useContext, useState } from "react";
 import { Calling } from "../Types/Calling";
 import { CAPTAIN } from "../Data/Callings/Captain";
 import { CharacterContext } from "../Main";
-import { Logo } from "../Components/Logo";
+import { Logo } from "../temp/Logo";
 
 export const CALLINGS: Calling[] = [];
 CALLINGS.push(CAPTAIN);

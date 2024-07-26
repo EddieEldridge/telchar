@@ -2,7 +2,7 @@ import { NavLink, redirect } from "react-router-dom";
 import "../Assets/css/General.css";
 import { useContext } from "react";
 import { CharacterContext } from "../Main";
-import StatsPicker from "../Components/StatsPicker";
+import StatsPicker from "../temp/StatsPicker";
 import lotrLogo from "../Assets/images/logo.png";
 
 function Statistics() {

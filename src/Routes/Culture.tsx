@@ -4,9 +4,9 @@ import { BARDING } from "../Data/Cultures/Barding";
 import { DWARF } from "../Data/Cultures/Dwarf";
 import { ELF } from "../Data/Cultures/Elf";
 import { Culture } from "../Types/Culture";
-import CultureInfo from "../Components/CultureInfo";
+import CultureInfo from "../temp/CultureInfo";
 import { useState } from "react";
-import { Logo } from "../Components/Logo";
+import { Logo } from "../temp/Logo";
 
 export const CULTURES: Culture[] = [];
 CULTURES.push(BARDING);
