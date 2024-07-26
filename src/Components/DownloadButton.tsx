@@ -1,4 +1,4 @@
-import { createDownload } from "../temp/Utils";
+import { createDownload } from "../Utils";
 
 export const DownloadButton = ({ fileContent, fileName }: { fileContent: any; fileName: string }) => {
   return (

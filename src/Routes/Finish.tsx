@@ -2,9 +2,9 @@ import { redirect } from "react-router-dom";
 import "../Assets/css/General.css";
 import { useContext } from "react";
 import { CharacterContext } from "../Main";
-import { upper } from "../temp/Utils";
-import { characterToFoundry } from "../temp/Converter";
-import { Logo } from "../temp/Logo";
+import { upper } from "../Utils";
+import { characterToFoundry } from "../Converter";
+import { Logo } from "../Logo";
 
 function Finish() {
   const character = useContext(CharacterContext);
