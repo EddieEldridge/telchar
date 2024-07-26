@@ -23,4 +23,4 @@ export function createDownload(fileContent: BlobPart, fileName: string) {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-};
+}

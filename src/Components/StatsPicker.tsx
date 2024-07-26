@@ -73,7 +73,7 @@ function StatsPicker() {
 
   const getCharacterAbilityModifierString = (stat: string) => {
     const characterModifiers = character.Culture?.culturalTraits.abilityScoreIncrease;
-    var modifier = "N/A";
+    let modifier = "N/A";
     if (!characterModifiers) return modifier;
     characterModifiers.forEach((element) => {
       if (element.name === stat) {
@@ -85,7 +85,7 @@ function StatsPicker() {
 
   const getCharacterAbilityModifier = (stat: string) => {
     const characterModifiers = character.Culture?.culturalTraits.abilityScoreIncrease;
-    var modifier = 0;
+    let modifier = 0;
     if (!characterModifiers) return modifier;
     characterModifiers.forEach((element) => {
       if (element.name === stat && element.value) {
